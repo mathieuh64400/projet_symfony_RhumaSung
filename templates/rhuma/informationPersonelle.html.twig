@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block title %}Informationspersonnelles
+{% endblock %}
+{% form_theme formPerso 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+	{% include "template_part/_nav2.html.twig" %}
+	<div class="example-wrapper">
+		<h1 class="text-center">Vos informations Personelles</h1>
+		<br>
+		<br>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="jumbotron ml-5 row  col-md-offset-3">
+
+				<div class="form-group ">
+					{{form_start(formPerso)}}
+					{{form_row(formPerso.identifiant,{'attr':{placeholder:'entrez votre mot de passe'}})}}
+					{{form_row(formPerso.password,{'attr':{placeholder:'entrez votre mot de passe'}})}}
+					{# {{form_row(formPerso.Email,{'attr':{placeholder:'entrez votre adressmail'}})}} #}
+					{{form_row(formPerso.Nom,{'attr':{placeholder:'entrez votre nom'}})}}
+					{{form_row(formPerso.prenom,{'attr':{placeholder:'entrez votre prenom'}})}}
+					{{form_row(formPerso.pays,{'attr':{placeholder:'entrez votre Pays'}})}}
+					{{form_row(formPerso.telephone,{'attr':{placeholder:'entrez votre numéro de téléphone'}})}}
+
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="customCheck2">
+						<label class="custom-control-label" for="customCheck2">j’accepte ces conditions</label>
+					</div>
+					<button type="submit" class="btn btn-warning">Valider Ces informations</button>
+
+					{{form_end(formPerso)}}
+				</div>
+			</div>
+
+
+			<div class="jumbotron"><br><br>
+				<h2 class="display-0">Information concernant <br> vos données personnelles</h2>
+				
+				<br><br><br><br>
+				<p class="lead">"Lorem ipsum dolor sit amet, consectetur  adipiscing elit, sed do eiusmod <br>  tempor incididunt ut labore et dolore magna aliqua.<br>  Ut enim ad minim veniam quis nostrud exercitation <br> ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>  Duis aute irure dolor in reprehenderit in voluptate velit esse <br>cillum dolore eu fugiat nulla pariatur.<br> Excepteur sint occaecat cupidatat non <br> proident, sunt in culpa qui officia deserunt mollit <br> anim id est laborum."
+				</p>
+
+			</div>
+
+		</div>
+	</div>
+{% endblock %}

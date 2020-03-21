@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mon historique de paiement
+
+{% endblock %}
+
+{% block body %}
+{% include "template_part/_nav2.html.twig" %}
+<div class="ml-3" style="text-align:center"> Les éléments listants l'historique de vos paiements  sont présentés sous la forme ci-dessous:</div>
+	<table class="table table-hover mt-3">
+  <thead>
+    <tr class="table-warning">
+      <th scope="col">N° de Payement</th>
+      <th scope="col">Date de Payement</th>
+      <th scope="col">Montant (euros) </th>
+      <th scope="col">Titulaire</th>
+      <th scope="col">Carte paiement</th>
+      <th scope="col">Reférence de Commande</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-light">
+      <th scope="row">Payement N°1</th>
+      <td>10/12/2019</td>
+      <td>100</td>
+      <td>J.DOE</td>
+      <td>N°..........</td>
+      <td>E415ATRE4</td>
+    </tr>
+    <tr class="table-light">
+     <th scope="row"><button type="button" class="btn btn-warning "> Supprimer</button> <button type="button" class="btn btn-warning">Modifier</button> </th>
+      <td> </td>
+      <td> </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table> 
+	
+    <div style="text-align:center">
+        <button type="button" class="btn btn-warning text-black p-3 mb-3"> Quitter l'historique</button>
+	</div>
+    {% endblock %}

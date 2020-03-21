@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mon historique de paiement
+
+{% endblock %}
+
+{% block body %}
+{% include "template_part/_nav2.html.twig" %}
+<h1 style="text-align:center">
+	Accés a mon profil</h1>
+<div style="text-align:center">Vous devez être connecter pour
+	<br>
+	pouvoir poursuivre sur cette page
+	<br>
+	Le profil est reservé à nos membres</div>
+<br>
+{% if app.user %}
+	<div style="text-align:center">
+		<a href="{{path('profil')}}">
+			<button type="button" class="btn btn-warning text-black p-3 mb-3">
+				Continuer la Navigation</button>
+		</a>
+	</div>
+{% else %}
+	<div style="text-align:center">
+		<p>
+			Pour devenir membre, il vous faut créer un compte pour être connecté et ainsi voir son profil
+		</p>
+		<a href="{{path('compte')}}">
+			<button type="button" class="btn btn-warning text-black p-3 mb-3">
+				Devenez Membre!!!
+			</button>
+		</a>
+	</a>
+</div>
+{% endif %}
+{% endblock %}

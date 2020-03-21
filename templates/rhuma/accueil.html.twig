@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+
+	{% include "template_part/_nav2.html.twig" %}
+
+
+	<div class="example-wrapper">
+		<h1 class="text-center">Nos produits</h1>
+
+		<br>
+		<br>
+		<h2 class="text-center">
+			Nos Rhums d'Exceptions & Notre gamme de sucre</h2>
+		<br>
+		<br>
+		<div class="container-fluid">
+			<div class="row">
+				{% for article in articles %}
+					<div class="col-md-3">
+						<div class="card mb-3 bg-warning mx-auto ">
+							<h3 class="card-header row mx-auto mb-0">
+								<div>{{article.titre}}</div>
+								<div>{{article.volume}}</div>
+							</h3>
+							<img class="mx-auto mt-5" style="height: 100%; width: 40%; display: block;" src="{{article.image}}" alt="bouteille de Rhum">
+							<div class="card-body mx-auto">
+								<p class="card-text">{{article.prix}}euros</p>
+							</div>
+							<div class="mx-auto mb-3">
+								<a href="{{path ('panier_add',{'id':article.id})}}">
+									<button type="button" class="btn btn-primary"> Ajouter a votre panier</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+			</div>
+		</div>
+
+
+	</div>
+{% endblock %}

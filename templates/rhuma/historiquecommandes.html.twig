@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mon historique de paiement
+
+{% endblock %}
+
+{% block body %}
+{% include "template_part/_nav2.html.twig" %}
+<div class="ml-3" style="text-align:center"> Liste de vos commandes de la plus récente à la plus ancienne </div>
+	<table class="table table-hover mt-3">
+  <thead>
+    <tr class="table-warning">
+      <th scope="col">Reférence de Commande</th>
+      <th scope="col">Date de Commande</th>
+      <th scope="col">Produit </th>
+      <th scope="col">Commanditaire</th>
+      <th scope="col">Adresse de Facturation</th>
+      <th scope="col">Ville de Facturation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-light">
+      <th scope="row">E415ATRE4</th>
+      <td>10/12/2019</td>
+      <td>Rhum Blanc </td>
+      <td>J.DOE</td>
+      <td>18 Rue de la Grave</td>
+      <td>Petaouchnok</td>
+    </tr>
+    <tr class="table-light">
+     <th scope="row"><button type="button" class="btn btn-warning "> Supprimer</button> <button type="button" class="btn btn-warning">Modifier</button> </th>
+      <td> </td>
+      <td> </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table> 
+	
+    <div style="text-align:center">
+        <button type="button" class="btn btn-warning text-black p-3 mb-3"> Quitter l'historique</button>
+	</div>
+    {% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mon historique de paiement
+
+{% endblock %}
+
+{% block body %}
+	{% include "template_part/_nav2.html.twig" %}
+	<h1 style="text-align:center">
+		Votre Panier:</h1>
+
+
+	<div class="container">
+		<div class="row">
+
+			<div class="card bg-light mb-3" style="max-width: 35rem;">
+				<div class="card-header" style="font-weight:bold; text-align:center">liste de vos achats
+				</div>
+				<div style="font-weight:bold; text-align:center">les prix sont les prix Totaux en euros</div>
+				{% if items | length>0 %}
+					<table class="table table-hover mt-3">
+						<thead>
+							<tr class="table-light">
+								<th scope="col">
+									Image</th>
+								<th scope="col">Volume</th>
+								<th scope="col">Désignation</th>
+								<th scope="col">Quantité</th>
+								<th scope="col">Prix</th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+
+							</tr>
+						</thead>
+						<tbody>
+							{% for item in items %}
+								<tr class="table-light">
+									<td scope="row">
+										<img src="{{item.article.image}}" class="img-responsive" alt="logo" width="100px;">
+									</td>
+									<td>{{item.article.volume}}</td>
+									<td>{{item.article.titre}}</td>
+									<td>{{item.quantity}}</td>
+									<td>{{item.article.prix * item.quantity}}</td>
+									<td>
+										<a href="{{path('panier_remove',{'id':item.article.id})}}">
+											<button type="button" class="btn btn-warning">
+												<i class="fas fa-trash"> Supprimer du panier</i>
+											</button>
+										</a>
+									</td>
+									<td></td>
+								</tr>
+							{% endfor %}
+						</tbody>
+						<tfoot>
+							<tr class="table-light">
+								<th scope="col">NOMBRE D'ARTICLE</th>
+								<th scope="col">Montant</th>
+								<th scope="col">Montant Taxes (5%)</th>
+								<th scope="col">Total(TTC)</th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+							</tr>
+							<tr class="table-light">
+								<th scope="col"></th>
+								<th scope="col">{{total}}
+									euros
+								</th>
+								<th scope="col">Montant Taxes (5%)</th>
+								<th scope="col">{{total*1.05}}
+									euros</th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+							</tr>
+						</tfoot>
+
+					</tbody>
+				</table>
+
+			{% else %}
+				<p>Le panier est vide</p>
+			{% endif %}
+
+			<div style="text-align:center">
+				<a href={{path('accueil')}}>
+					<button type="button" class="btn btn-warning text-black p-3 mb-3">
+						Continuer vos achats
+					</button>
+				</a>
+			</div>
+		</div>
+		<div class="card bg-light mb-3" style="max-width: 35rem;">
+			<div class="card-header" style="font-weight:bold; text-align:center">Conditions</div>
+			<div class="card-body mt-0"></div>
+			<div>
+				<h2 style="text-align:center">
+					Delai de Livraison</h2>
+				<div style="text-align:center">
+					Vous disposez de 14 jours pour changer d’avis et demander un remboursement apres votre achat</div>
+			</div>
+			<h2 style="text-align:center">
+				Contact par Téléphone</h2>
+			<div style="font-weight:bold; text-align:center">
+				+33 (0)5 59 39 70 23
+			</div>
+			<div style="text-align:center">
+				Nous sommes joignables à ce numero du lundi au samedi de 9h à 19h</div>
+			<h2 style="text-align:center">
+				Gratuité de Livraison
+			</h2>
+			<div style="text-align:center">
+				Volume d'Achat Minimal de 100 euros
+			</div>
+			<div style="text-align:center">
+				<div class=" mt-5" style="margin-left:25%">
+					<div class="g-recaptcha" data-sitekey="6LeJ-94UAAAAANsoi0yIuP42Pq_EM-y-zTjGnnnU"></div>
+				</div>
+				<a href={{path('commande_payer')}}>
+					<button type="button" class="btn btn-warning p-3 mt-5 mb-5">Valider ma Commande</button>
+				</a>
+			</div>
+		</div>
+	</div>
+	{% block javascripts %}
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	{% endblock %}
+{% endblock %}

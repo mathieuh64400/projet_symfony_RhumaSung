@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title %}Vos adresse
+{% endblock %}
+{% form_theme formPersobis'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+	{% include "template_part/_nav2.html.twig" %}
+	<div class="example-wrapper">
+		<h1 class="text-center">Vos adresses</h1>
+		<br>
+		<br>
+         <div class="text-center"> Vous avez droit à une dresse principale et une adresse secondaire:</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="jumbotron ml-5 row  col-md-offset-3">
+               <br>
+                <div class="form-group ">
+					{{form_start(formPersobis)}}
+
+					{{form_row(formPersobis.titre,{'attr':{placeholder:'choissisez'}})}}
+					{{form_row(formPersobis.volume,{'attr':{placeholder:'entrez votre volume'}})}}
+					{{form_row(formPersobis.image,{'attr':{placeholder:'entrez votre src'}})}}
+					{{form_row(formPersobis.prix,{'attr':{placeholder:'entrez votre prix'}})}}
+					
+					
+					<button type="submit" class="btn btn-warning">Envoyer</button>
+
+					{{form_end(formPersobis)}}
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+{% endblock %}

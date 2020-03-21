@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mon profil
+
+{% endblock %}
+
+{% block body %}
+	{% include "template_part/_nav2.html.twig" %}
+	<div class="container">
+		<div class="jumbotron">
+			<h1 class="display-4 text-center">Mon Profil</h1>
+			<p class="lead">Dans cette partie, vous pouvez obtenir des renseignements précis sur vos achats en selectionnant un des quatre chapitres suivant:</p>
+			<hr class="my-4">
+
+			<div class="mb-4">
+                <a href="{{path('info_personnelle')}}">
+					<button type="button" class="btn btn-primary btn-lg btn-block"> Informations Personnelles</button>
+				</a>
+			</div>
+            <div class="mb-4">
+				<a href="{{path('adresse')}}">
+                	<button type="button" class="btn btn-primary btn-lg btn-block"> Adresse</button>
+				</a>
+			</div>
+			<div class="mb-4">
+				<a href="{{path('paiements')}}">
+               		<button type="button" class="btn btn-primary btn-lg btn-block"> Historique des payements</button>
+            	</a>
+			</div>
+			<div  class=" mb-4">
+				<a href="{{path('historiqueCommandes')}}">
+                	<button type="button" class="btn btn-primary btn-lg btn-block">Historique des commandes</button>
+				</a>
+			</div>
+		</div>
+    </div>
+	{% endblock %}

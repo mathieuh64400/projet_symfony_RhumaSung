@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block title %}Vos adresses
+{% endblock %}
+{% form_theme formadresse 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+
+	{% include "template_part/_nav2.html.twig" %}
+	<div class="example-wrapper">
+		<h1 class="text-center">Vos adresses</h1>
+		<br>
+		<br>
+         <div class="text-center"> Vous avez droit à une dresse principale et une adresse secondaire:</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="jumbotron ml-5 row  col-md-offset-3">
+               <br>
+                <div class="form-group ">
+					{{form_start(formadresse)}}
+
+					{{form_row(formadresse.Nom,{'attr':{placeholder:'entrez votre nom'}})}}
+					{{form_row(formadresse.prenom,{'attr':{placeholder:'entrez votre prenom'}})}}
+					{{form_row(formadresse.pays,{'attr':{placeholder:'entrez votre Pays'}})}}
+					{{form_row(formadresse.type_adresse1,{'attr':{placeholder:'choissisez'}})}}
+					{{form_row(formadresse.adresse2,{'attr':{placeholder:'entrez votre adresse'}})}}
+                   {{form_row(formadresse.type_adresse2,{'attr':{placeholder:'choissisez'}})}}
+				    {{form_row(formadresse.code_postal,{'attr':{placeholder:'entrez votre Code Postal'}})}}
+                    {{form_row(formadresse.ville,{'attr':{placeholder:'entrez votre Ville de Facturation'}})}}
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="customCheck2">
+						<label class="custom-control-label" for="customCheck2">j’accepte ces conditions</label>
+					</div>
+					<button type="submit" class="btn btn-warning">Valider Ces informations</button>
+
+					{{form_end(formadresse)}}
+				</div>
+			</div>
+
+
+			<div class="jumbotron">
+				<p class="lead">Information vis-a-vis de la protection des données</p>
+				<br><br><br>
+				<h2 class="display-0">Information concernant <br>vos données personnelles</h2>
+				<p class="lead">"Lorem ipsum dolor sit amet, consectetur <br>adipiscing elit, sed do eiusmod tempor incididunt ut<br> labore et dolore magna aliqua. Ut enim ad minim veniam <br> quis nostrud exercitation ullamco laboris nisi ut <br>aliquip ex ea commodo consequat. Duis aute irure dolor in<br> reprehenderit in voluptate velit esse <br>cillum dolore eu fugiat nulla pariatur.<br> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <br>officia deserunt mollit anim id est laborum."
+				</p>
+
+			</div>
+
+		</div>
+	</div>
+{% endblock %}

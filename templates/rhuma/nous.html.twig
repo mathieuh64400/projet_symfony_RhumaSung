@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+
+	{% include "template_part/_nav2.html.twig" %}
+
+
+	<div class="example-wrapper">
+		<h1 class="text-center">Qui sommes-nous ?</h1>
+		<br>
+		<br>
+        <div class="container">
+		     <div class="row mb-5">
+			
+				<img class=" container rounded float-left " class="img-fluid" style="height: 40%; width: 40%; display: block;" src="{{asset ('assets/images/sucriére.jpg')}}">
+				<div class="col-md-6">
+					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+					<br><br><br>
+					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					<br>
+					enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+					<br><br><br>
+					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					<br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+				</div>
+            </div>
+		</div>
+
+		{% endblock %}

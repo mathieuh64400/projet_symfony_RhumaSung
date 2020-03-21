@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mon Compte
+
+{% endblock %}
+
+{% block body %}
+
+	{% include "template_part/_nav2.html.twig" %}
+	<div class="container">
+		<a href="{{path('app_register')}}">
+			<button type="button" class="btn btn-warning btn-lg btn-block">Créer votre compte</button>
+		</a>
+		<a href="{{path('app_login')}}">
+			<button type="button" class="btn btn-warning btn-lg btn-block">connexion à votre compte</button>
+		</a>
+	</div>
+{% endblock %}
